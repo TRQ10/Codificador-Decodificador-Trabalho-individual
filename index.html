@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Caesar's Cipher</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="header">
+    <div class="dropdown">
+      <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bibi-question-circle" viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+        <path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z"/>
+      </svg>
+      <div class="dropdown-content">
+        <p>Olá, seja bem vindo.<br>
+          Aqui explicarei como se utilizar o site.<br>
+          podemos escolher se queremos utilizar<br>
+          ou a Cifra de cesar ou base 64, basta selecionar 
+          no menu.
+          ----------------------------------------------------
+          A Cifra de cesar funcionará da seguinte forma:
+          Primeiramente no campo "Digite aqui" colocaremos
+          a palavra que queremos codificar e logo em seguida
+          adicionamos o incremento para embaralhar as letras, número positivo para codificar e o negativo do mesmo para decodificar,
+          após sua decisão é só clicar no botão Codificador / Decodificador que o resultado irá aparecer abaixo.<br>
+          ----------------------------------------------------
+          A base 64 funciona da seguinte forma:<br>
+          Primeiramente no campo "Digite aqui" colocaremos
+          a palavra que queremos codificar e logo em seguida clicamos em codificar para fazer o trabalho.<br>
+          Caso queira decodificar é só inserir em "Digite aqui" o código e logo depois clicar em decodificar
+          que o resultado irá aparecer abaixo.
+        </p>
+      </div>
+    </div>
+  <div class="mainContainer">
+    <h1>Codificador e Decodificador</h1>
+    <div class="inner-header flex">
+      <label for="original">Digite aqui a mensagem original</label>
+      <input placeholder='Digite aqui' id="original" type="text" onkeyup="update()" onchange="update()" autofocus>
+      <label id="shift1" for="shift">Incremento</label>
+      <input id="shift" type="number" placeholder="0" value="2" max="26" min="-26">
+      <div class="btns">
+        <button id="btn1" class="btn">Codificador e Decodificador</button>
+        <div class="b64">
+            <button id="btn2" class="btn">Codificador</button>
+            <button id="btn3" class="btn">Decodificador</button>
+        </div>     
+      </div>
+      <div class="select">
+        <select id="Selector" onchange="location.reload()">
+          <option value="rot">Cifra de Cesar</option>
+          <option value="base64">Base64</option>
+        </select>
+      </div>
+      <hr>
+      <label for="encrypted">Mensagem criptografada</label>
+      <input id="encrypted" type="text" value="" readonly>
+    </div>
+  </div>
+    <span>
+      <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+      <path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z"/>
+    </span>
+    <div class="background">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+      viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+      <defs>
+      <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+      </defs>
+      <g class="parallax">
+      <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
+      <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+      <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+      <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+      </g>
+      </svg>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
